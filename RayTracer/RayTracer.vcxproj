@@ -141,9 +141,13 @@
   <ItemGroup>
     <ClCompile Include="RayTracer.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="Renderer\Canvas.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Math\Color.h" />
+    <ClInclude Include="Math\MathUtils.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="Renderer\Canvas.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

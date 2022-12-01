@@ -1,5 +1,7 @@
 #pragma once
 
+#include"Renderer/Canvas.h"
+
 #include<SDL.h>
 
 class Renderer{
@@ -14,10 +16,16 @@ public:
 
 	bool CreateWindow(int width, int height);
 
+	void CopyCanvas(const Canvas& canvas);
+
+	void Present();
+
+	friend class Canvas;
+
 private:
 
-	SDL_Window* m_window{ nullptr };
-
 	SDL_Renderer* m_renderer{ nullptr };
+
+	SDL_Window* m_window{ nullptr };
 
 };
