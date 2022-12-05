@@ -1,6 +1,8 @@
 
 #include "Renderer.h"
 
+#include "Objects/Sphere.h"
+
 #include <iostream>
 
 int main(int, char**){
@@ -9,11 +11,11 @@ int main(int, char**){
 
     renderer.Initialize(); 
     
-    renderer.CreateWindow(400, 300); 
+    renderer.CreateWindow(600, 300); 
     
-    Canvas canvas(400, 300, renderer);
+    Canvas canvas(600, 300, renderer);
 
-
+    auto sphere = std::make_unique<Sphere>(glm::vec3{ 0, 0, 1 }, 0.5f, nullptr);
 
     bool quit = false; 
     
@@ -51,11 +53,13 @@ int main(int, char**){
     
         canvas.Clear({0, 0, 0, 1 });
 
-        for (int i = 0; i < 25000; i++) {
+        renderer.Render(canvas, sphere.get());
 
-            canvas.DrawPoint({ random(0,400), random(0,300) }, { random01(),random01(),random01(),1 });
+        //for (int i = 0; i < 25000; i++) {
 
-        }
+        //    canvas.DrawPoint({ random(0,400), random(0,300) }, { random01(),random01(),random01(),1 });
+
+        //}
 
         canvas.Update();
 

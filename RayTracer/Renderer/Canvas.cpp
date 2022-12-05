@@ -29,7 +29,7 @@ void Canvas::Draw(const Renderer& renderer){
 
 }
 
-void Canvas::Clear(const glm::vec4& color){
+void Canvas::Clear(const color4& color){
 
 	rgba_t rgba= ColorToRGBA(color);
 
@@ -37,7 +37,7 @@ void Canvas::Clear(const glm::vec4& color){
 
 }
 
-void Canvas::DrawPoint(const glm::ivec2& point, const glm::vec4& color){
+void Canvas::DrawPoint(const glm::ivec2& point, const color4& color){
 
 	if (point.x < 0 || point.x >= m_width || point.y < 0 || point.y >= m_height) return;
 

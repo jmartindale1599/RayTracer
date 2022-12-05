@@ -4,9 +4,13 @@
 
 using rgba_t = uint32_t; // 8 8 8 8 
 
-inline glm::vec4 RGBAToColor(const rgba_t& rgba){
+using color3 = glm::vec3;
 
-    glm::vec4 color;
+using color4 = glm::vec4;
+
+inline color4 RGBAToColor(const rgba_t& rgba){
+
+    color4 color;
 
     color.r = ((rgba >> 24) & 0xff) / 255.0f;
     
@@ -20,7 +24,7 @@ inline glm::vec4 RGBAToColor(const rgba_t& rgba){
 
 }
 
-inline rgba_t ColorToRGBA(const glm::vec4& color){
+inline rgba_t ColorToRGBA(const color4& color){
 
     rgba_t rgba = 0;
 
