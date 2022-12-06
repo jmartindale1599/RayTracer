@@ -8,6 +8,8 @@
 
 #include<SDL.h>
 
+class Scene;
+
 class Renderer{
 
 public:
@@ -22,7 +24,7 @@ public:
 
 	void CopyCanvas(const Canvas& canvas);
 
-	void Render(Canvas& canvas, Object* object);
+	void Render(Canvas& canvas, Scene& scene);
 
 	void Present();
 

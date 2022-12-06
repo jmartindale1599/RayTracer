@@ -3,6 +3,8 @@
 
 #include "Objects/Sphere.h"
 
+#include "Objects/Scene.h"
+
 #include <iostream>
 
 int main(int, char**){
@@ -15,7 +17,13 @@ int main(int, char**){
     
     Canvas canvas(600, 300, renderer);
 
-    auto sphere = std::make_unique<Sphere>(glm::vec3{ 0, 0, 1 }, 0.5f, nullptr);
+    Scene scene;
+
+    scene.AddObject(std::make_unique<Sphere>(glm::vec3{ 1, 0, -1 }, 0.5f, std::make_unique<Lambertian>(color3(0.5f, 0, 0.7f))));
+
+    scene.AddObject(std::make_unique<Sphere>(glm::vec3{ -3.75f, 5.62f, -6 }, 7.5f, std::make_unique<Lambertian>(color3(0.5f, 0, 0))));
+
+    scene.AddObject(std::make_unique<Sphere>(glm::vec3{ 0, -100.5f, -1 }, 100.0f, std::make_unique<Lambertian>(color3(0.2f, 0.3f, 0))));
 
     bool quit = false; 
     
@@ -53,7 +61,7 @@ int main(int, char**){
     
         canvas.Clear({0, 0, 0, 1 });
 
-        renderer.Render(canvas, sphere.get());
+        renderer.Render(canvas, scene);
 
         //for (int i = 0; i < 25000; i++) {
 
