@@ -6,6 +6,8 @@
 
 #include "Objects/Objects.h"
 
+#include "Renderer/Camera.h"
+
 #include<SDL.h>
 
 class Scene;
@@ -24,7 +26,7 @@ public:
 
 	void CopyCanvas(const Canvas& canvas);
 
-	void Render(Canvas& canvas, Scene& scene);
+	void Render(Canvas& canvas, Scene& scene, Camera& camera);
 
 	void Present();
 
