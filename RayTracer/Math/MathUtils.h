@@ -22,14 +22,6 @@ inline float random(float min, float max) {
 
 }
 
-template <typename T>
-
-inline T lerp(T a, T b, float t) {
-
-	return(a * (1.0f - t)) + (b * t);
-
-}
-
 inline glm::vec3 randomInUnitSphere(){
 
     glm::vec3 point;
@@ -41,5 +33,29 @@ inline glm::vec3 randomInUnitSphere(){
     }while(glm::length2(point) >= 1);
 
     return point;
+
+}
+
+inline float dot(const glm::vec3& v1, const glm::vec3& v2) {
+
+    return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;
+
+}
+
+
+
+inline glm::vec3 reflect(const glm::vec3& v, const glm::vec3& n) {
+
+
+
+    return v - (n * dot(n, v)) * 2.0f;
+
+}
+
+template <typename T>
+
+inline T lerp(T a, T b, float t) {
+
+	return(a * (1.0f - t)) + (b * t);
 
 }
