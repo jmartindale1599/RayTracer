@@ -40,7 +40,7 @@ color3 Scene::Trace(const Ray& ray, float min, float max, RaycastHit& hit, int d
 
         }else{
 
-            return { 0, 0, 0 };
+            return hit.material->getEmissive();
         
         }
 
@@ -50,7 +50,7 @@ color3 Scene::Trace(const Ray& ray, float min, float max, RaycastHit& hit, int d
         
         float t = (direction.y + 1) * 0.5f;
         
-        return lerp(glm::vec3(0.5f, 0.7f, 1.0f), glm::vec3(1, 1, 1), t);
+        return lerp(m_topColor, m_bottomColor, t);
     
     }
 

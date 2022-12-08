@@ -36,9 +36,6 @@
     <ClCompile Include="Objects\Sphere.cpp">
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="Renderer\Material.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Objects\Scene.cpp">
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
@@ -47,6 +44,9 @@
     </ClCompile>
     <ClCompile Include="Objects\Plane.cpp">
       <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\Material.cpp">
+      <Filter>Source Files\Renderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
